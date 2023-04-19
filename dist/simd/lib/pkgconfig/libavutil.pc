@@ -1,0 +1,14 @@
+prefix=/home/sun/workspace/FFmpeg/../zdwasm/dist/simd
+exec_prefix=${prefix}
+libdir=/home/sun/workspace/FFmpeg/../zdwasm/dist/simd/lib
+includedir=/home/sun/workspace/FFmpeg/../zdwasm/dist/simd/include
+
+Name: libavutil
+Description: FFmpeg utility library
+Version: 57.17.100
+Requires: 
+Requires.private: 
+Conflicts:
+Libs: -L${libdir}  -lavutil -pthread -lm -lX11
+Libs.private: 
+Cflags: -I${includedir}

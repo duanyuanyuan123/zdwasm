@@ -1,0 +1,14 @@
+prefix=/home/sun/workspace/FFmpeg/../zdwasm/dist/nosimd
+exec_prefix=${prefix}
+libdir=/home/sun/workspace/FFmpeg/../zdwasm/dist/nosimd/lib
+includedir=/home/sun/workspace/FFmpeg/../zdwasm/dist/nosimd/include
+
+Name: libavformat
+Description: FFmpeg container format library
+Version: 59.16.100
+Requires: libavcodec >= 59.18.100, libavutil >= 57.17.100
+Requires.private: 
+Conflicts:
+Libs: -L${libdir}  -lavformat -lm
+Libs.private: 
+Cflags: -I${includedir}
