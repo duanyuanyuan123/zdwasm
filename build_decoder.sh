@@ -15,8 +15,8 @@ mkdir -p dist/simd
 #emmake --target="wasm32" make CC=emcc CXX=em++ AR=emar RANLIB="emranlib" CFLAGS_OPT="-mwasm64" PREFIX=$(pwd)/../zdwasm/dist/openh264_nosimd
 #echo "make install"
 #make install
-
-echo "emconfigure with simd"
+cd ../ffmpeg
+echo "emconfigure"
 emconfigure ./configure --cc="emcc" --cxx="em++" --ar="emar" --ranlib="emranlib" --prefix=$(pwd)/../zdwasm/dist/nosimd --enable-cross-compile --target-os=none \
         --arch=x86_32 --cpu=generic --disable-gpl --enable-version3 --disable-avdevice --disable-swresample --disable-postproc --disable-avfilter \
         --disable-programs --disable-logging --disable-everything --enable-avformat --enable-decoder=hevc --enable-decoder=h264 \
