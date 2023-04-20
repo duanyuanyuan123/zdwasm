@@ -2,14 +2,14 @@ echo "Beginning Build:"
 rm -r dist
 mkdir -p dist/nosimd
 mkdir -p dist/simd
-mkdir -p dist/openh264_nosimd
-mkdir -p dist/openh264_simd
+#mkdir -p dist/openh264_nosimd
+#mkdir -p dist/openh264_simd
 
 #cd ../openh264
 #echo "emconfigure openh264...."
 #if [ -f "Makefile" ]; then
- # echo "make clean"
- # make clean
+  #echo "make clean"
+  #make clean
 #fi
 #echo "make"
 #emmake --target="wasm32" make CC=emcc CXX=em++ AR=emar RANLIB="emranlib" CFLAGS_OPT="-mwasm64" PREFIX=$(pwd)/../zdwasm/dist/openh264_nosimd
@@ -36,7 +36,7 @@ make
 echo "make install"
 make install
 
-cho "emconfigure with simd"
+echo "emconfigure with simd"
 emconfigure ./configure --cc="emcc" --cxx="em++" --ar="emar" --ranlib="emranlib" --prefix=$(pwd)/../zdwasm/dist/simd --enable-cross-compile --target-os=none \
         --arch=x86_32 --cpu=generic --disable-gpl --enable-version3 --disable-avdevice --disable-swresample --disable-postproc --disable-avfilter \
         --disable-programs --disable-logging --disable-everything --enable-avformat --enable-decoder=hevc --enable-decoder=h264 \
